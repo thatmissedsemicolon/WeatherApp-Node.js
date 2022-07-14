@@ -15,7 +15,7 @@ const search = async (e) => {
     setLoading(true);
     if(query) {
       try {
-        const data = await axios.get(`https://weather-sury.herokuapp.com/weather?q=${query}`);
+        const data = await axios.get(`http://localhost:8000/weather?q=${query}`);
         setweather(data);
         setQuery('');
         setLoading(false);
