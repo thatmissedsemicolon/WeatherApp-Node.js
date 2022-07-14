@@ -30,7 +30,7 @@ const search = async (e) => {
 }
 
 return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center">
       <div className="p-8 w-96 cursor-pointer rounded-3xl bg-[#fff]">
         <ToastContainer />
         <div className="-mb-20 -translate-y-1/2 transform">
