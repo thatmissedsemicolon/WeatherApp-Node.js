@@ -15,7 +15,7 @@ const search = async (e) => {
     setLoading(true);
     if(query) {
       try {
-        const data = await axios.get(`http://localhost:8000/weather?q=${query}`);
+        const data = await axios.get(`https://weather-sury.herokuapp.com/weather?q=${query}`);
         setweather(data);
         setQuery('');
         setLoading(false);
@@ -30,10 +30,10 @@ const search = async (e) => {
 }
 
 return (
-    <div class="flex h-screen w-screen items-center justify-center">
-      <div class="p-8 w-96 cursor-pointer rounded-3xl bg-[#fff]">
+    <div className="flex h-screen w-screen items-center justify-center">
+      <div className="p-8 w-96 cursor-pointer rounded-3xl bg-[#fff]">
         <ToastContainer />
-        <div class="-mb-20 -translate-y-1/2 transform">
+        <div className="-mb-20 -translate-y-1/2 transform">
           {!loading ? (
             <div class="pt-2 relative mx-auto text-gray-600">
               <input type="text"className="border-2 ml-7 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"placeholder="Search a city..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search}/>
@@ -45,15 +45,15 @@ return (
           )}
         </div>
         {weather && (
-          <div class="mt-20 flex items-center justify-center">
-            <div class="bg-white p-8 bg-opacity-80 rounded-3xl flex space-x-12 items-center shadow-md">
+          <div className="mt-20 flex items-center justify-center">
+            <div className="bg-white p-8 bg-opacity-80 rounded-3xl flex space-x-12 items-center shadow-md">
               <div>
                 <img alt="icon" src={weather?.data?.current?.condition?.icon}/>
-                <p class="text-center text-gray-500 mt-2 text-sm">{weather?.data?.current?.condition?.text}</p>
+                <p className="text-center text-gray-500 mt-2 text-sm">{weather?.data?.current?.condition?.text}</p>
               </div>
               <div>
-                <p class="text-5xl font-bold text-right text-gray-900">{weather?.data?.current?.temp_f}°F</p>
-                <p class="text-gray-500 text-sm">{weather?.data?.location?.name}, {weather?.data?.location?.region}</p>
+                <p className="text-5xl font-bold text-right text-gray-900">{weather?.data?.current?.temp_f}°F</p>
+                <p className="text-gray-500 text-sm">{weather?.data?.location?.name}, {weather?.data?.location?.region}</p>
               </div>
             </div>
           </div>
@@ -62,6 +62,5 @@ return (
     </div>
   );
 } 
-
 
 export default Weather;
