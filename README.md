@@ -1,5 +1,5 @@
 <h1 align="center">
-  Crypto Application
+  Weather Application
 </h1>
 
 ## 🛠 set-up
